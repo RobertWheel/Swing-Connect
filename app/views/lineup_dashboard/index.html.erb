@@ -1,0 +1,82 @@
+<h1>Line Up Card</h1>
+
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+
+<th>Your Team</th>
+<th>Coach</th>
+
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+
+<td>
+<select name="team_name">
+<option value="" selected disabled>Select Team</option>
+<% @teams.each do |team| %>
+    <option value="<%= team.id %>"><%= team.name %></option>
+      <% end %>
+
+</td>      
+ <td><%= text_field_tag 'order[]', nil, class: 'order-input' %></td>
+
+<!---------------------------------------------------------------------------------------!>
+
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+
+<th>Opponent Team</th>
+<th>Date</th>
+
+
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<td><%= text_field_tag 'order[]', nil, class: 'order-input' %></td>
+<td><%= text_field_tag 'order[]', nil, class: 'order-input' %></td>
+<!---------------------------------------------------------------------------------------!>
+
+
+
+
+
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+
+<th style="width: 30px;">Order</th>
+<th style="width: 20px;">NO.</th>
+<th>Player</th>
+<th>Position</th>
+
+<tbody>
+
+
+<tr>
+<% (1..15).each do |order| %>
+      <tr>
+     <td><%= order %></td>
+    <td></td>
+       <td>
+
+     <%= select_tag "player[#{order}]", options_for_select([["Select Player", ""]] + @players.map { |player| [player.full_name, player.id] }) %>
+       </td>
+       <td>
+     <%= select_tag "position[#{order}]", options_for_select(["Select Position", "Pitcher", "Catcher", "First Base", "Second Base", "Third Base", "Shortstop", "Left Field", "Center Field", "Right Field"]) %>
+       </td>
+    </tr>
+    <% end %>
+         </tbody>
+      </table> 
+
+      <td>
+
+</table>

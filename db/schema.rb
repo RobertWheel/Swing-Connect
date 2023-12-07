@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_05_060530) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_07_014646) do
   create_table "players", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -20,14 +20,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_05_060530) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_players_on_team_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string "opponent"
+    t.string "location"
+    t.datetime "game_day_and_start_time"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "player_id", null: false
-    t.index ["player_id"], name: "index_teams_on_player_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_05_060530) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "teams", "players"
+  add_foreign_key "players", "teams"
 end

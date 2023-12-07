@@ -4,10 +4,12 @@
 
 <div id="teams">
   <% @teams.each do |team| %>
-    <%= render team %>
+   <div class="card">
+    <%= team.name %>
     <p>
-      <%= link_to "Show this team", team %>
+      <%= link_to "Show this team and players", team %>
     </p>
+    </div>
   <% end %>
 </div>
 

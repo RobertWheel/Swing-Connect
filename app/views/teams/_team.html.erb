@@ -4,4 +4,16 @@
     <%= team.name %>
   </p>
 
+<p>
+    <strong>Players:</strong>
+   <ul>
+   <% team.players.each do |player| %>
+   <li><%= link_to player.full_name, player_path(player) %></li>
+
+    <% end %>
+   </ul>
+</p>
+
+
+
 </div>

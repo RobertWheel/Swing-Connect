@@ -7,6 +7,28 @@
 <h1>Welcome please select from the links below</h1>
 
 <div id="welcome">
-<h3>- <%= link_to "My Players/ New Players", players_path%></h3>
+<div class="badge text-bg-light"> <h3>- <%= link_to "My Players/ New Player", players_path%></h3></div>
+<span class="badge rounded-pill text-bg-danger"><h3>- <%= link_to "My Teams/ New Team", teams_path%></h3></span>
+
+<br>
+<br>
+
+<table class="table table-striped table-bordered">
+
+<thead>
+<tr>
+
+<th>Opponent Team</th>
+<th>Date</th>
+
+
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<td><%=  %></td>
+<td><%=  %></td>
 </div>
 </div>

@@ -4,10 +4,14 @@
 
 <div id="players">
   <% @players.each do |player| %>
+
   <div class="card">
-    <%= render player %>
+    <%= player.full_name %>
+
+    <%= player.primary_position.try(:humanize) %>
+
     <p>
-      <%= link_to "Show this player", player %>
+      <%= link_to "Show this player and info", player %>
     </p>
     </div>
   <% end %>

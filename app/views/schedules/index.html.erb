@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Schedules</h1>
+
+<div id="schedules">
+  <% @schedules.each do |schedule| %>
+ <div class="card">
+    <%= render schedule %>
+    <p>
+      <%= link_to "Show this schedule", schedule %>
+    </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New schedule", new_schedule_path %>

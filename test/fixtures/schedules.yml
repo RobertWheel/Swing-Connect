@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  opponent: MyString
+  location: MyString
+  game_day_and_start_time: 2023-12-06 17:46:46
+  notes: MyText
+
+two:
+  opponent: MyString
+  location: MyString
+  game_day_and_start_time: 2023-12-06 17:46:46
+  notes: MyText
