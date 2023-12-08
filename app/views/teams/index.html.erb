@@ -5,9 +5,10 @@
 <div id="teams">
   <% @teams.each do |team| %>
    <div class="card">
-    <%= team.name %>
+  <h5><%= team.name %></h5>
     <p>
-      <%= link_to "Show this team and players", team %>
+    <br>
+      <%= link_to "Show Team", team , class: "btn btn-primary" %>
     </p>
     </div>
   <% end %>

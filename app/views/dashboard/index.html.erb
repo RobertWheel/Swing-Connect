@@ -2,23 +2,14 @@
 <br>
 
 
-<div id="welcome"> 
-
-<h1>Welcome please select from the links below</h1>
-
-<div id="welcome">
-<div class="badge text-bg-light"> <h3>- <%= link_to "My Players/ New Player", players_path%></h3></div>
-<span class="badge rounded-pill text-bg-danger"><h3>- <%= link_to "My Teams/ New Team", teams_path%></h3></span>
-
-<br>
-<br>
-
+<h1>Upcoming Games</h1>
 <table class="table table-striped table-bordered">
 
 <thead>
 <tr>
 
-<th>Opponent Team</th>
+<th>Opponent</th>
+<th>location</th>
 <th>Date</th>
 
 
@@ -28,7 +19,50 @@
 
 
 <tr>
-<td><%=  %></td>
-<td><%=  %></td>
+
+<% @schedule.each do |schedule| %>
+
+  <% if schedule.game_day_and_start_time > Date.today %>
+  <td><%= schedule.opponent%></td>
+   <td><%= schedule.location%></td>
+ 
+  <td><%= schedule.game_day_and_start_time%></td>
+
+</tr>
+<% end %>
+  <% end %> 
+<!-----------------------------------------------------------!>
+
+
+<table class="table table-striped table-bordered">
+
+<thead>
+<tr>
+<br>
+<br>
+
+
+<h1>Past Games</h1>
+<th>Opponent</th>
+<th>location</th>
+<th>Date</th>
+<th>Win or Loss</th>
+
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+
+<% @schedule.each do |schedule| %>
+  <% if schedule.game_day_and_start_time < Date.today %>
+  <td><%= schedule.opponent%></td>
+   <td><%= schedule.location%></td> 
+  <td><%= schedule.game_day_and_start_time%></td>
+    <td><%= %></td>
+    </tr>
+  <%end %>
+  <% end %> 
 </div>
-</div>
+

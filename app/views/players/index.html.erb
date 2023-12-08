@@ -6,15 +6,19 @@
   <% @players.each do |player| %>
 
   <div class="card">
-    <%= player.full_name %>
+    <h4><%= player.full_name %></h4>
 
     <%= player.primary_position.try(:humanize) %>
 
     <p>
-      <%= link_to "Show this player and info", player %>
+    <br>
+    <%= link_to "Player Info", player, class: "btn btn-primary" %>
     </p>
     </div>
   <% end %>
 </div>
 
-<%= link_to "New player", new_player_path %>
+<%= link_to "New player", new_player_path, class: "btn btn-primary" %>
+
+<br>
+<br>
