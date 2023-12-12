@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :line_ups
   resources :schedules
   get 'lineup_dashboard/index'
   resources :teams

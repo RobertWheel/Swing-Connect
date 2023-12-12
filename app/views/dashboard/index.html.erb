@@ -25,7 +25,6 @@
   <% if schedule.game_day_and_start_time > Date.today %>
   <td><%= schedule.opponent%></td>
    <td><%= schedule.location%></td>
- 
   <td><%= schedule.game_day_and_start_time%></td>
 
 </tr>
@@ -60,7 +59,7 @@
   <td><%= schedule.opponent%></td>
    <td><%= schedule.location%></td> 
   <td><%= schedule.game_day_and_start_time%></td>
-    <td><%= %></td>
+    <td><%= schedule.outcome.try(:humanize) %></td>
     </tr>
   <%end %>
   <% end %> 

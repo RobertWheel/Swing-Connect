@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_08_035322) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_12_235425) do
+  create_table "line_ups", force: :cascade do |t|
+    t.string "name"
+    t.integer "schedule_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["schedule_id"], name: "index_line_ups_on_schedule_id"
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -21,6 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_08_035322) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "team_id"
+    t.integer "primary_position"
+    t.integer "secondary_position"
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
@@ -52,5 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_08_035322) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "line_ups", "schedules"
   add_foreign_key "players", "teams"
 end

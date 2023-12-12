@@ -5,7 +5,21 @@
 <div id="schedules">
   <% @schedules.each do |schedule| %>
  <div class="card">
-    <%= render schedule %>
+ <p>
+        <strong>Opponent:</strong>
+    <%= schedule.opponent %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= schedule.location %>
+  </p>
+
+  <p>
+    <strong>Game day and start time:</strong>
+    <%= schedule.game_day_and_start_time %>
+  </p>
+
     <p>
       <%= link_to "Show Game", schedule , class: "btn btn-primary" %>
     </p>

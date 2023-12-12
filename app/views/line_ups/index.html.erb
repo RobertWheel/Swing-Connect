@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Line ups</h1>
+
+<div id="line_ups">
+  <% @line_ups.each do |line_up| %>
+    <%= render line_up %>
+    <p>
+      <%= link_to "Show this line up", line_up %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New line up", new_line_up_path %>

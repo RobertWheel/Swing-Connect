@@ -1,16 +1,28 @@
 class Player < ApplicationRecord
 
-  enum primary_position: {
-       pitcher: 'Pitcher',
-       catcher: 'Catcher',
-       first_base: '1st Base',
-       second_base: '2nd Base',
-       third_base: '3rd Base',
-       short_stop: 'Short Stop',
-       left_field: 'L Field',
-       center_field: 'C Field',
-       right_field: 'R Field'
-   }
+  enum primary_position: [
+       :pitcher,
+       :catcher,
+       :first_base,
+       :second_base,
+       :third_base,
+       :short_stop,
+       :left_field,
+       :center_field,
+       :right_field
+   ]
+
+#  enum secondary_position: [
+#       :pitcher,
+#       :catcher,
+#       :first_base,
+#       :second_base,
+#       :third_base,
+#       :short_stop,
+#       :left_field,
+#       :center_field,
+#       :right_field
+#   ]
 
 
 
