@@ -7,7 +7,7 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :primary_position, collection: Player.primary_positions.keys.map { |key| [key.humanize, key] }, prompt: 'Select One' %>
-<!--  f.input :secondary_position, collection: Player.secondary_position.keys.map { |key| [key.humanize, key] }, prompt: 'Select One' %> --!>
+    <%= f.input :secondary_position, collection: Player.secondary_positions.keys.map { |key| [key.humanize, key] }, prompt: 'Select One' %>
     <%= f.input :age %>
     <%= f.input :grade %>
     <%= f.input :school %>

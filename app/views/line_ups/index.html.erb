@@ -6,7 +6,7 @@
   <% @line_ups.each do |line_up| %>
     <%= render line_up %>
     <p>
-      <%= link_to "Show this line up", line_up %>
+      <%= link_to "Show this line up", schedule_line_up_path(@schedule, line_up) %>
     </p>
   <% end %>
 </div>

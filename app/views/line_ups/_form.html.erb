@@ -3,11 +3,8 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.association :schedule %>
-  </div>
-
+    <%= f.association :player, collection: Player.all.map{ |p| [p.full_name, p.id] }, prompt: 'Select a player' %>
+    <%= f.input :primary_position, collection: Player.primary_positions.keys.map { |key| [key.humanize, key] }, prompt: 'Select One' %>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

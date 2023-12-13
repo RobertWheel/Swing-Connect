@@ -13,7 +13,7 @@ class LineUpsController < ApplicationController
 
   # GET /line_ups/new
   def new
-    @line_up = LineUp.new
+    @line_up = @schedule.line_ups.new
   end
 
   # GET /line_ups/1/edit
@@ -22,11 +22,11 @@ class LineUpsController < ApplicationController
 
   # POST /line_ups or /line_ups.json
   def create
-    @line_up = LineUp.new(line_up_params)
+    @line_up = @schedule.line_ups.new(line_up_params)
 
     respond_to do |format|
       if @line_up.save
-        format.html { redirect_to line_up_url(@line_up), notice: "Line up was successfully created." }
+        format.html { redirect_to schedule_line_up_url(@schedule, @line_up), notice: "Line up was successfully created." }
         format.json { render :show, status: :created, location: @line_up }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class LineUpsController < ApplicationController
   def update
     respond_to do |format|
       if @line_up.update(line_up_params)
-        format.html { redirect_to line_up_url(@line_up), notice: "Line up was successfully updated." }
+        format.html { redirect_to schedule_line_up_url(@schedule, @line_up), notice: "Line up was successfully updated." }
         format.json { render :show, status: :ok, location: @line_up }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class LineUpsController < ApplicationController
     @line_up.destroy
 
     respond_to do |format|
-      format.html { redirect_to line_ups_url, notice: "Line up was successfully destroyed." }
+      format.html { redirect_to schedule_line_ups_url(@schedule), notice: "Line up was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class LineUpsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_up_params
-      params.require(:line_up).permit(:name, :schedule_id)
+      params.require(:line_up).permit(:name,:schedule_id, :player_id)
     end
 end
