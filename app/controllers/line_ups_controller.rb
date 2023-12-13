@@ -1,9 +1,10 @@
 class LineUpsController < ApplicationController
+  before_action :set_schedule
   before_action :set_line_up, only: %i[ show edit update destroy ]
 
   # GET /line_ups or /line_ups.json
   def index
-    @line_ups = LineUp.all
+    @line_ups = @schedule.line_ups
   end
 
   # GET /line_ups/1 or /line_ups/1.json
@@ -59,6 +60,9 @@ class LineUpsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_schedule 
+       @schedule = Schedule.find(params[:schedule_id])
+    end
     def set_line_up
       @line_up = LineUp.find(params[:id])
     end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :line_ups
-  resources :schedules
+  resources :schedules do
+      resources :line_ups
+  end
+
   get 'lineup_dashboard/index'
   resources :teams
   get 'dashboard/index'

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Line ups</h1>
+<h1>Line Up Card For Game Against - <%= @schedule.opponent %></h1>
 
 <div id="line_ups">
   <% @line_ups.each do |line_up| %>
@@ -11,4 +11,4 @@
   <% end %>
 </div>
 
-<%= link_to "New line up", new_line_up_path %>
+<%= link_to "New line up", new_schedule_line_up_path(@schedule) %>
