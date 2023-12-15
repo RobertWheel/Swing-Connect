@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_13_014910) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_13_205417) do
   create_table "line_ups", force: :cascade do |t|
     t.string "name"
     t.integer "schedule_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "player_id", null: false
+    t.integer "order"
+    t.integer "field_position"
     t.index ["player_id"], name: "index_line_ups_on_player_id"
     t.index ["schedule_id"], name: "index_line_ups_on_schedule_id"
   end
@@ -33,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_014910) do
     t.integer "team_id"
     t.integer "primary_position"
     t.integer "secondary_position"
+    t.integer "number"
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 

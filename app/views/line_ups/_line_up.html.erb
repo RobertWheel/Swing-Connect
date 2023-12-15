@@ -1,12 +1,17 @@
+ 
 <div id="<%= dom_id line_up %>">
-  <p>
     <strong>Name:</strong>
-    <%= line_up.name %>
+    <%= line_up.player.full_name %>
   </p>
 
   <p>
-    <strong>Schedule:</strong>
-    <%= line_up.schedule_id %>
+    <strong>Order Number:</strong>
+    <%= line_up.order %>
   </p>
+<p>
+    <strong>Field Position:</strong>
+    <%= line_up.field_position.try(:humanize) %>
+  </p>
+
 
 </div>

@@ -6,5 +6,5 @@
   <%= link_to "Edit this line up", edit_schedule_line_up_path(@schedule, @line_up) %> |
   <%= link_to "Back to line ups", schedule_line_ups_path(@schedule) %>
 
-  <%= button_to "Destroy this line up", schedule_line_up_path(@schedule,@line_up), method: :delete %>
+  <%= button_to "Delete player from line up", schedule_line_up_path(@schedule,@line_up), method: :delete,  class: "btn btn-danger"  %>
 </div>

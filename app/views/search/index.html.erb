@@ -1,0 +1,41 @@
+<h1>Search Players</h1>
+
+
+<%= form_with url: "/search", method: :get do |form| %>
+<div>
+<%= form.label :query, "Search for:", :class => "form-label"%>
+<%= form.text_field :query, :value => @query, :class => "form-control" %>
+</div>
+
+<div>
+<%= form.label :primary_position_id, "Filter by Primary Position:", :class => "form-label"%>
+<%= form.select :primary_position_id, Player.primary_positions.map {|value, key| [value.humanize, key]}, {:selected => @primary_position_id, :include_blank => true}, {:class => "form-select"} %>
+</div>
+<br>
+<br>
+<div>
+<%= form.submit "Search", :class => "btn btn-outline-primary"%>
+</div>
+
+<% end %>
+<br>
+
+<p class="mt-3">You Searched for '<%= @query %>'</p>
+
+<% if @query.present? %>
+<h2> Results </h2>
+
+<% if @players.present? %>
+
+<ul>
+
+<% @players.each do |c| %>
+
+<li><%= link_to "#{c.first_name} - #{c.primary_position.humanize}/#{c.secondary_position.humanize}", player_path(c) %></li>
+
+<%end%>
+</ul>
+<% end %>
+<%else%>
+ <p class="mt-3">Ready to search!</p>
+ <%end%>

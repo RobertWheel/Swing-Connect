@@ -2,9 +2,9 @@
 <%= simple_form_for([@schedule, @line_up]) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+   <%= f.input :order, collection: 1..15, prompt: 'Select an Order', required: true %>
     <%= f.association :player, collection: Player.all.map{ |p| [p.full_name, p.id] }, prompt: 'Select a player' %>
-    <%= f.input :primary_position, collection: Player.primary_positions.keys.map { |key| [key.humanize, key] }, prompt: 'Select One' %>
+    <%= f.input :field_position, collection: LineUp.field_positions.keys.map { |key| [key.humanize, key] }, prompt: 'Select One', required: true %>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

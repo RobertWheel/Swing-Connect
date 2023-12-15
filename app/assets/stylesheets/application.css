@@ -9,7 +9,6 @@ fieldset legend {
 }
 
 #navbarNav { 
-   display: flex;
    justify-content: space-between;
  }
 

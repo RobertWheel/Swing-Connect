@@ -6,6 +6,7 @@
   <div class="form-inputs">
     <%= f.input :first_name %>
     <%= f.input :last_name %>
+    <%= f.input :number %>
     <%= f.input :primary_position, collection: Player.primary_positions.keys.map { |key| [key.humanize, key] }, prompt: 'Select One' %>
     <%= f.input :secondary_position, collection: Player.secondary_positions.keys.map { |key| [key.humanize, key] }, prompt: 'Select One' %>
     <%= f.input :age %>

@@ -69,6 +69,6 @@ class LineUpsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_up_params
-      params.require(:line_up).permit(:name,:schedule_id, :player_id)
+      params.require(:line_up).permit(:name,:schedule_id, :player_id, :order, :field_position)
     end
 end

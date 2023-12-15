@@ -3,11 +3,21 @@
     <strong>Full name:</strong>
     <%= player.full_name %>
   </p>
+<p>
+    <strong>Jersey Number:</strong>
+     <%= player.number %>
+  </p>
+
 
  <p>
     <strong>Primary Position:</strong>
      <%= player.primary_position.try(:humanize) %>
   </p>
+<p>
+    <strong>Secondary Position:</strong>
+     <%= player.secondary_position.try(:humanize) %>
+  </p>
+
 
 
   <p>

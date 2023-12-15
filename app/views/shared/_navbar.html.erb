@@ -12,20 +12,28 @@
            <a class="nav-link" href="/players">Players</a>
              </li>
                <li class="nav-item"> 
-                <a class="nav-link" href="/schedules">Games</a>
+                <a class="nav-link" href="/schedules">Add Games/Line Up</a>
                </li>
              <li class="nav-item"> 
             <a class="nav-link" href="/teams">Teams</a>
           </li>
+         <li class="nav-item"> 
+        <a class="nav-link" href="/">Game Schedule</a>
+       </li>
+
         <li class="nav-item"> 
-       <a class="nav-link" href="/lineup_dashboard/index">Line Up Cards</a>
+     <!--  <a class="nav-link" href="/lineup_dashboard/index">Line Up Cards</a> --!>
      </li>
   </ul>
 
  </div>
 
+<form class="d-flex" role="search" action="/search">
+         <input class="form-control me-2" type="search" name="query" placeholder="Search Players" aria-label="Search" value= "<%= @query %>">
+         <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<%= button_tag "Dark Mode", :id => "dark-mode", :class => "btn btn-secondary", "data-turbo-permanent" => true %>
  <%= button_to("Sign Out", destroy_user_session_path, :method => :delete, :class => "btn btn-outline-secondary") %>
   <% end %>
- 
  </div>
 </nav>
