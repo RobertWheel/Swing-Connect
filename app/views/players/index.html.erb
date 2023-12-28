@@ -2,10 +2,10 @@
 
 <h1>Players</h1>
 
-<div id="players">
+  <div class="parent">
   <% @players.each do |player| %>
 
-  <div class="card">
+  <div class="displayed-item">
     <h4><%= player.full_name %> #<%= player.number%></h4>
     <div>
     <h6> - <%= player.primary_position.try(:humanize) %></h6>
@@ -14,14 +14,11 @@
     <h6> - <%= player.secondary_position.try(:humanize) %></h6>
     </div>
     <p>
-    <br>
     <%= link_to "Player Info", player, class: "btn btn-primary" %>
     </p>
     </div>
   <% end %>
-</div>
 
+  </div>
 <%= link_to "New player", new_player_path, class: "btn btn-primary" %>
-
-<br>
-<br>
+  </div>

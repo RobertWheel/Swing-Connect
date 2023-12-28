@@ -2,9 +2,9 @@
 
 <h1>Teams</h1>
 
-<div id="teams">
+<div class ='parent'>
   <% @teams.each do |team| %>
-   <div class="card">
+  <div class ='displayed-item'>
   <h5><%= team.name %></h5>
     <p>
     <br>
@@ -12,6 +12,6 @@
     </p>
     </div>
   <% end %>
-</div>
 
+</div>
 <%= link_to "New team", new_team_path %>
