@@ -1,5 +1,5 @@
 class CustomDeviseController < ApplicationController
 
- layout "authentication"
+# layout "authentication"
 
 end
