@@ -46,3 +46,29 @@ container {
   column-gap: 10px;
   grid-row-gap: 15px;
 }
+
+.login-page-image {
+     margin: 0; /* Remove default body margin */
+     padding: 0; /* Remove default body padding */
+     height: 100vh; /* Set body height to 100% of viewport height */
+     background-image: url('/assets/field.JPG');
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed; /* Fixed background image */
+}
+
+
+
+.app-page-image {
+     margin: 0; /* Remove default body margin */
+     padding: 0; /* Remove default body padding */
+     height: 100vh; /* Set body height to 100% of viewport height */
+     background-image: url(app/assets/images/field.JPG);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+.custom-link {
+     color: #000000; /* Set your desired color using hexadecimal, RGB, or color name */
+     background-attachment: fixed; /* Fixed background image */
+}
