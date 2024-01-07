@@ -2,7 +2,7 @@
 
 .card { 
    padding: 2rem 3rem; 
-   margin: 2rem 0rem;  
+   margin: 2rem 4rem;  
 }
 
 
@@ -35,6 +35,14 @@ fieldset legend {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 5px;
-    width: 100%;; /* Adjust the width of each item as needed */
+    width: 100%;;
 }
 
+container {
+  border: 1px solid #ccc;
+  margin: 5px;
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px;
+  column-gap: 10px;
+  grid-row-gap: 15px;
+}

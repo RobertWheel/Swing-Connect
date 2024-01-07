@@ -1,11 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Players</h1>
-
-  <div class="parent">
+<div class="d-flex flex-wrap justify-content-center" id="players">
   <% @players.each do |player| %>
 
-  <div class="displayed-item">
+  
+<div class="card">
     <h4><%= player.full_name %> #<%= player.number%></h4>
     <div>
     <h6> - <%= player.primary_position.try(:humanize) %></h6>
@@ -18,7 +18,8 @@
     </p>
     </div>
   <% end %>
+  </div>
 
-  </div>
 <%= link_to "New player", new_player_path, class: "btn btn-primary" %>
-  </div>
+<br>
+<br>

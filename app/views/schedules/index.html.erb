@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Schedules</h1>
+<h1>Games</h1>
 
-<div id="schedules">
+<div class="d-flex flex-wrap justify-content-center" id="schedules">
   <% @schedules.each do |schedule| %>
  <div class="card">
  <p>
@@ -28,4 +28,6 @@
   <% end %>
 </div>
 
-<%= link_to "New schedule", new_schedule_path %>
+<%= link_to "New schedule", new_schedule_path,class: "btn btn-primary"%>
+<br>
+<br>

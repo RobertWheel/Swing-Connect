@@ -2,9 +2,9 @@
 
 <h1>Teams</h1>
 
-<div class ='parent'>
+<div class="d-flex flex-wrap justify-content-center" id="players">
   <% @teams.each do |team| %>
-  <div class ='displayed-item'>
+  <div class ='card'>
   <h5><%= team.name %></h5>
     <p>
     <br>
@@ -14,4 +14,4 @@
   <% end %>
 
 </div>
-<%= link_to "New team", new_team_path %>
+<%= link_to "New team", new_team_path,class: "btn btn-primary" %>
